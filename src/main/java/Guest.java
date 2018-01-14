@@ -14,6 +14,7 @@ public class Guest {
     }
 
 
-
-
+    public int getNumberNightsStay() {
+        return numberNightsStay;
+    }
 }

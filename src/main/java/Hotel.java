@@ -5,6 +5,7 @@ public class Hotel {
     ArrayList<Bedroom> bedrooms;
     ArrayList<PublicRoom> publicRooms;
     ArrayList<Guest> occupants;
+    ArrayList<Bedroom> vacantBedrooms;
 
     public Hotel(){
 
@@ -26,11 +27,11 @@ public class Hotel {
 
 
     public int countBedrooms() {
-        return bedrooms.size();
+        return this.bedrooms.size();
     }
 
     public int countPublicRooms() {
-        return publicRooms.size();
+        return this.publicRooms.size();
     }
 
     public void checkIn(Guest guest, Bedroom bedroom) {
@@ -44,5 +45,24 @@ public class Hotel {
 
     public void checkOut(Bedroom bedroom) {
         bedroom.checkOutGuests();
+    }
+
+    public ArrayList getVacantBedrooms() {
+        vacantBedrooms = new ArrayList<>();
+        for (Bedroom bedroom: this.bedrooms){
+            if (bedroom.guestCount() == 0){
+                vacantBedrooms.add(bedroom);
+            }
+        }
+        return this.vacantBedrooms;
+    }
+
+    public Bedroom getBedroom(String roomName) {
+        for (Bedroom bedroom : this.bedrooms) {
+            if (roomName == bedroom.getRoomName()) {
+                return bedroom;
+            }
+        }
+        return bedrooms.get(0);
     }
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Bedroom extends Room{
 
-    private ArrayList<Bedroom> bedroooms;
+//    private ArrayList<Bedroom> bedrooms;
     private ArrayList<Guest> occupants;
 
     public Bedroom(String roomName, int capacity, String roomType) {
@@ -11,20 +11,20 @@ public class Bedroom extends Room{
     }
 
     public int guestCount() {
-        return occupants.size();
+        return this.occupants.size();
     }
 
     public void addGuest(Guest guest) {
         if (guestCount() < capacity) {
-            occupants.add(guest);
+            this.occupants.add(guest);
         }
     }
 
     public ArrayList<Guest> getOccupants() {
-        return occupants;
+        return this.occupants;
     }
 
     public void checkOutGuests() {
-        occupants.clear();
+        this.occupants.clear();
     }
 }

@@ -20,8 +20,8 @@ public class HotelTest {
         guest1 = new Guest("President Abe 'Vampire Killer' Lincoln", 3);
         guest2 = new Guest("First Lady Lincoln", 3);
         occupants = new ArrayList<>();
-        occupants.add(guest1);
-        occupants.add(guest2);
+        this.occupants.add(guest1);
+        this.occupants.add(guest2);
     }
 
     @Test
@@ -33,6 +33,12 @@ public class HotelTest {
     @Test
     public void hasTwoPublicRooms(){
         assertEquals(2, hotel.countPublicRooms());
+    }
+
+    @Test
+    public void canGetBedroom(){
+        assertEquals("Presidential Suite", hotel.getBedroom("Presidential Suite").getRoomName());
+
     }
 
     @Test
@@ -59,6 +65,13 @@ public class HotelTest {
     @Test
     public void canGetNoOccupants(){
         assertEquals(0, hotel.getOccupants(bedroom).size());
+    }
+
+    @Test
+    public void canListVacantBedrooms(){
+        bedroom = hotel.getBedroom("Presidential Suite");
+        hotel.checkIn(guest1, bedroom);
+        assertEquals(9, hotel.getVacantBedrooms().size());
     }
 
 }
