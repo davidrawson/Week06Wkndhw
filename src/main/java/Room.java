@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class Room {
 
-    private ArrayList<Room> rooms;
-    private String roomName;
-    private int capacity;
-    private String roomType;
+    protected ArrayList<Room> rooms;
+    protected String roomName;
+    protected int capacity;
+    protected String roomType;
 
     public Room(String roomName, int capacity, String roomType){
         rooms = new ArrayList<>();
