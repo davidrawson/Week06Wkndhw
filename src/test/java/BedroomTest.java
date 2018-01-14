@@ -23,6 +23,11 @@ public class BedroomTest {
 
     }
 
+//    @Test
+//    public void canGetOccupants(){
+//
+//    }
+
     @Test
     public void canCheckOutGuests(){
         bedroom.addGuest(guest);

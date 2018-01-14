@@ -1,4 +1,4 @@
-public enum BedroomsEnum {
+public enum BedroomsList {
     ONE("1", 1, "Single"),
     TWO("2", 2, "Double"),
     THREE("3", 1, "Single"),
@@ -14,7 +14,7 @@ public enum BedroomsEnum {
     private final int capacity;
     private final String roomType;
 
-    BedroomsEnum(String roomName, int capacity, String roomType) {
+    BedroomsList(String roomName, int capacity, String roomType) {
         this.roomName = roomName;
         this.capacity = capacity;
         this.roomType = roomType;

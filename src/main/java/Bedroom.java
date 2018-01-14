@@ -20,6 +20,10 @@ public class Bedroom extends Room{
         }
     }
 
+    public ArrayList<Guest> getOccupants() {
+        return occupants;
+    }
+
     public void checkOutGuests() {
         occupants.clear();
     }
