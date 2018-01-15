@@ -63,6 +63,6 @@ public class Hotel {
                 return bedroom;
             }
         }
-        return bedrooms.get(0);
+        return null;
     }
 }

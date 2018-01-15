@@ -69,7 +69,8 @@ public class HotelTest {
 
     @Test
     public void canListVacantBedrooms(){
-        bedroom = hotel.getBedroom("Presidential Suite");
+//        bedroom = hotel.getBedroom("Presidential Suite");
+        bedroom = hotel.getBedroom(BedroomsList.SEVEN.getRoomName());
         hotel.checkIn(guest1, bedroom);
         assertEquals(9, hotel.getVacantBedrooms().size());
     }
